@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA904A791AC0621900FA947D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA904A781AC0621900FA947D /* main.m */; };
+		DA904A7C1AC0621900FA947D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA904A7B1AC0621900FA947D /* AppDelegate.m */; };
+		DA904A7F1AC0621900FA947D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA904A7E1AC0621900FA947D /* ViewController.m */; };
+		DA904A821AC0621900FA947D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA904A801AC0621900FA947D /* Main.storyboard */; };
+		DA904A841AC0621900FA947D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA904A831AC0621900FA947D /* Images.xcassets */; };
+		DA904A871AC0621900FA947D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA904A851AC0621900FA947D /* LaunchScreen.xib */; };
+		DA904A931AC0621900FA947D /* Face_ScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA904A921AC0621900FA947D /* Face_ScannerTests.m */; };
+		DAB864411AC1D088002E4756 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB864401AC1D088002E4756 /* libxml2.dylib */; };
+		DAB864421AC1D0E8002E4756 /* libKairosSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4C41AC19B5900A6C08F /* libKairosSDK.a */; };
+		DACFC4A51AC0770800A6C08F /* StudentDatabase.html in Resources */ = {isa = PBXBuildFile; fileRef = DACFC4A41AC0770800A6C08F /* StudentDatabase.html */; };
+		DACFC4A91AC16C0C00A6C08F /* UIImage+FaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4A81AC16C0C00A6C08F /* UIImage+FaceDetection.m */; };
+		DACFC4AC1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4AB1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m */; };
+		DACFC4B41AC1745500A6C08F /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4B11AC1745500A6C08F /* HTMLNode.m */; };
+		DACFC4B51AC1745500A6C08F /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4B31AC1745500A6C08F /* HTMLParser.m */; };
+		DACFC4B71AC17F7F00A6C08F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4AD1AC1710F00A6C08F /* CoreImage.framework */; };
+		DACFC4B91AC194BB00A6C08F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4B81AC194BB00A6C08F /* UIKit.framework */; };
+		DACFC4BB1AC194C300A6C08F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4BA1AC194C300A6C08F /* Foundation.framework */; };
+		DACFC4BD1AC194CB00A6C08F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4BC1AC194CB00A6C08F /* CoreMedia.framework */; };
+		DACFC4BF1AC194D200A6C08F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4BE1AC194D200A6C08F /* CoreGraphics.framework */; };
+		DACFC4C11AC194D900A6C08F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4C01AC194D900A6C08F /* AVFoundation.framework */; };
+		DACFC4C31AC194E100A6C08F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4C21AC194E100A6C08F /* AudioToolbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA904A8D1AC0621900FA947D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA904A6B1AC0621900FA947D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA904A721AC0621900FA947D;
+			remoteInfo = "Face Scanner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA904A731AC0621900FA947D /* Face Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA904A771AC0621900FA947D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA904A781AC0621900FA947D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA904A7A1AC0621900FA947D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA904A7B1AC0621900FA947D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA904A7D1AC0621900FA947D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DA904A7E1AC0621900FA947D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DA904A811AC0621900FA947D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA904A831AC0621900FA947D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DA904A861AC0621900FA947D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DA904A8C1AC0621900FA947D /* Face ScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Face ScannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA904A911AC0621900FA947D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA904A921AC0621900FA947D /* Face_ScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Face_ScannerTests.m; sourceTree = "<group>"; };
+		DAB864401AC1D088002E4756 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		DACFC4A41AC0770800A6C08F /* StudentDatabase.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = StudentDatabase.html; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.html; };
+		DACFC4A71AC16C0C00A6C08F /* UIImage+FaceDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FaceDetection.h"; sourceTree = "<group>"; };
+		DACFC4A81AC16C0C00A6C08F /* UIImage+FaceDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FaceDetection.m"; sourceTree = "<group>"; };
+		DACFC4AA1AC16D5500A6C08F /* FaceSelectionCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceSelectionCollectionViewController.h; sourceTree = "<group>"; };
+		DACFC4AB1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceSelectionCollectionViewController.m; sourceTree = "<group>"; };
+		DACFC4AD1AC1710F00A6C08F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		DACFC4B01AC1745500A6C08F /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		DACFC4B11AC1745500A6C08F /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		DACFC4B21AC1745500A6C08F /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		DACFC4B31AC1745500A6C08F /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		DACFC4B61AC17F1B00A6C08F /* KairosSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KairosSDK.h; sourceTree = "<group>"; };
+		DACFC4B81AC194BB00A6C08F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DACFC4BA1AC194C300A6C08F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DACFC4BC1AC194CB00A6C08F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DACFC4BE1AC194D200A6C08F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DACFC4C01AC194D900A6C08F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DACFC4C21AC194E100A6C08F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DACFC4C41AC19B5900A6C08F /* libKairosSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKairosSDK.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA904A701AC0621900FA947D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAB864421AC1D0E8002E4756 /* libKairosSDK.a in Frameworks */,
+				DAB864411AC1D088002E4756 /* libxml2.dylib in Frameworks */,
+				DACFC4C31AC194E100A6C08F /* AudioToolbox.framework in Frameworks */,
+				DACFC4C11AC194D900A6C08F /* AVFoundation.framework in Frameworks */,
+				DACFC4BF1AC194D200A6C08F /* CoreGraphics.framework in Frameworks */,
+				DACFC4BD1AC194CB00A6C08F /* CoreMedia.framework in Frameworks */,
+				DACFC4BB1AC194C300A6C08F /* Foundation.framework in Frameworks */,
+				DACFC4B91AC194BB00A6C08F /* UIKit.framework in Frameworks */,
+				DACFC4B71AC17F7F00A6C08F /* CoreImage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA904A891AC0621900FA947D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA904A6A1AC0621900FA947D = {
+			isa = PBXGroup;
+			children = (
+				DA904A751AC0621900FA947D /* Face Scanner */,
+				DA904A8F1AC0621900FA947D /* Face ScannerTests */,
+				DA904A741AC0621900FA947D /* Products */,
+				DACFC4C21AC194E100A6C08F /* AudioToolbox.framework */,
+				DACFC4C01AC194D900A6C08F /* AVFoundation.framework */,
+				DACFC4BE1AC194D200A6C08F /* CoreGraphics.framework */,
+				DACFC4BC1AC194CB00A6C08F /* CoreMedia.framework */,
+				DACFC4BA1AC194C300A6C08F /* Foundation.framework */,
+				DACFC4B81AC194BB00A6C08F /* UIKit.framework */,
+				DACFC4AD1AC1710F00A6C08F /* CoreImage.framework */,
+				DACFC4C41AC19B5900A6C08F /* libKairosSDK.a */,
+				DAB864401AC1D088002E4756 /* libxml2.dylib */,
+			);
+			sourceTree = "<group>";
+		};
+		DA904A741AC0621900FA947D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA904A731AC0621900FA947D /* Face Scanner.app */,
+				DA904A8C1AC0621900FA947D /* Face ScannerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA904A751AC0621900FA947D /* Face Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				DA904A7A1AC0621900FA947D /* AppDelegate.h */,
+				DA904A7B1AC0621900FA947D /* AppDelegate.m */,
+				DA904A7D1AC0621900FA947D /* ViewController.h */,
+				DA904A7E1AC0621900FA947D /* ViewController.m */,
+				DACFC4AA1AC16D5500A6C08F /* FaceSelectionCollectionViewController.h */,
+				DACFC4AB1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m */,
+				DA904A801AC0621900FA947D /* Main.storyboard */,
+				DA904A831AC0621900FA947D /* Images.xcassets */,
+				DA904A851AC0621900FA947D /* LaunchScreen.xib */,
+				DA904A761AC0621900FA947D /* Supporting Files */,
+			);
+			path = "Face Scanner";
+			sourceTree = "<group>";
+		};
+		DA904A761AC0621900FA947D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DACFC4B61AC17F1B00A6C08F /* KairosSDK.h */,
+				DACFC4AF1AC1745500A6C08F /* Objective-C HMTL Parser */,
+				DACFC4A61AC16C0C00A6C08F /* UIImage FaceDetection */,
+				DACFC4A41AC0770800A6C08F /* StudentDatabase.html */,
+				DA904A771AC0621900FA947D /* Info.plist */,
+				DA904A781AC0621900FA947D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA904A8F1AC0621900FA947D /* Face ScannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA904A921AC0621900FA947D /* Face_ScannerTests.m */,
+				DA904A901AC0621900FA947D /* Supporting Files */,
+			);
+			path = "Face ScannerTests";
+			sourceTree = "<group>";
+		};
+		DA904A901AC0621900FA947D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA904A911AC0621900FA947D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DACFC4A61AC16C0C00A6C08F /* UIImage FaceDetection */ = {
+			isa = PBXGroup;
+			children = (
+				DACFC4A71AC16C0C00A6C08F /* UIImage+FaceDetection.h */,
+				DACFC4A81AC16C0C00A6C08F /* UIImage+FaceDetection.m */,
+			);
+			path = "UIImage FaceDetection";
+			sourceTree = "<group>";
+		};
+		DACFC4AF1AC1745500A6C08F /* Objective-C HMTL Parser */ = {
+			isa = PBXGroup;
+			children = (
+				DACFC4B01AC1745500A6C08F /* HTMLNode.h */,
+				DACFC4B11AC1745500A6C08F /* HTMLNode.m */,
+				DACFC4B21AC1745500A6C08F /* HTMLParser.h */,
+				DACFC4B31AC1745500A6C08F /* HTMLParser.m */,
+			);
+			path = "Objective-C HMTL Parser";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA904A721AC0621900FA947D /* Face Scanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA904A961AC0621900FA947D /* Build configuration list for PBXNativeTarget "Face Scanner" */;
+			buildPhases = (
+				DA904A6F1AC0621900FA947D /* Sources */,
+				DA904A701AC0621900FA947D /* Frameworks */,
+				DA904A711AC0621900FA947D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Face Scanner";
+			productName = "Face Scanner";
+			productReference = DA904A731AC0621900FA947D /* Face Scanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA904A8B1AC0621900FA947D /* Face ScannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA904A991AC0621900FA947D /* Build configuration list for PBXNativeTarget "Face ScannerTests" */;
+			buildPhases = (
+				DA904A881AC0621900FA947D /* Sources */,
+				DA904A891AC0621900FA947D /* Frameworks */,
+				DA904A8A1AC0621900FA947D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA904A8E1AC0621900FA947D /* PBXTargetDependency */,
+			);
+			name = "Face ScannerTests";
+			productName = "Face ScannerTests";
+			productReference = DA904A8C1AC0621900FA947D /* Face ScannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA904A6B1AC0621900FA947D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Georges Kanaan";
+				TargetAttributes = {
+					DA904A721AC0621900FA947D = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					DA904A8B1AC0621900FA947D = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = DA904A721AC0621900FA947D;
+					};
+				};
+			};
+			buildConfigurationList = DA904A6E1AC0621900FA947D /* Build configuration list for PBXProject "Face Scanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA904A6A1AC0621900FA947D;
+			productRefGroup = DA904A741AC0621900FA947D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA904A721AC0621900FA947D /* Face Scanner */,
+				DA904A8B1AC0621900FA947D /* Face ScannerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA904A711AC0621900FA947D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA904A821AC0621900FA947D /* Main.storyboard in Resources */,
+				DA904A871AC0621900FA947D /* LaunchScreen.xib in Resources */,
+				DA904A841AC0621900FA947D /* Images.xcassets in Resources */,
+				DACFC4A51AC0770800A6C08F /* StudentDatabase.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA904A8A1AC0621900FA947D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA904A6F1AC0621900FA947D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACFC4A91AC16C0C00A6C08F /* UIImage+FaceDetection.m in Sources */,
+				DACFC4AC1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m in Sources */,
+				DACFC4B41AC1745500A6C08F /* HTMLNode.m in Sources */,
+				DA904A7F1AC0621900FA947D /* ViewController.m in Sources */,
+				DA904A7C1AC0621900FA947D /* AppDelegate.m in Sources */,
+				DACFC4B51AC1745500A6C08F /* HTMLParser.m in Sources */,
+				DA904A791AC0621900FA947D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA904A881AC0621900FA947D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA904A931AC0621900FA947D /* Face_ScannerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA904A8E1AC0621900FA947D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA904A721AC0621900FA947D /* Face Scanner */;
+			targetProxy = DA904A8D1AC0621900FA947D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA904A801AC0621900FA947D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA904A811AC0621900FA947D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA904A851AC0621900FA947D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA904A861AC0621900FA947D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA904A941AC0621900FA947D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DA904A951AC0621900FA947D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA904A971AC0621900FA947D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = "Face Scanner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA904A981AC0621900FA947D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = "Face Scanner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DA904A9A1AC0621900FA947D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Face ScannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Face Scanner.app/Face Scanner";
+			};
+			name = Debug;
+		};
+		DA904A9B1AC0621900FA947D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Face ScannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Face Scanner.app/Face Scanner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA904A6E1AC0621900FA947D /* Build configuration list for PBXProject "Face Scanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA904A941AC0621900FA947D /* Debug */,
+				DA904A951AC0621900FA947D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA904A961AC0621900FA947D /* Build configuration list for PBXNativeTarget "Face Scanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA904A971AC0621900FA947D /* Debug */,
+				DA904A981AC0621900FA947D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA904A991AC0621900FA947D /* Build configuration list for PBXNativeTarget "Face ScannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA904A9A1AC0621900FA947D /* Debug */,
+				DA904A9B1AC0621900FA947D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA904A6B1AC0621900FA947D /* Project object */;
+}
