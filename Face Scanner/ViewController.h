@@ -7,17 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreImage/CoreImage.h>
-#import "KairosSDK.h"
-#import "UIImage+FaceDetection.h"
-#import "FaceSelectionCollectionViewController.h"
-#import "HTMLParser.h"
 
-@interface ViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate> {
-    UIImagePickerController *imagePicker;
-}
-
-@property (strong, nonatomic) UIImage *selectedFace;
-@property (nonatomic) BOOL shouldDetectFace;
+@interface ViewController : UIViewController 
+- (void)recognizeFace:(UIImage *)selectedFace;
 @end
-

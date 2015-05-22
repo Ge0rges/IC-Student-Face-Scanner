@@ -16,11 +16,8 @@
 		DA904A931AC0621900FA947D /* Face_ScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA904A921AC0621900FA947D /* Face_ScannerTests.m */; };
 		DAB864411AC1D088002E4756 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB864401AC1D088002E4756 /* libxml2.dylib */; };
 		DAB864421AC1D0E8002E4756 /* libKairosSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4C41AC19B5900A6C08F /* libKairosSDK.a */; };
-		DACFC4A51AC0770800A6C08F /* StudentDatabase.html in Resources */ = {isa = PBXBuildFile; fileRef = DACFC4A41AC0770800A6C08F /* StudentDatabase.html */; };
 		DACFC4A91AC16C0C00A6C08F /* UIImage+FaceDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4A81AC16C0C00A6C08F /* UIImage+FaceDetection.m */; };
 		DACFC4AC1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4AB1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m */; };
-		DACFC4B41AC1745500A6C08F /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4B11AC1745500A6C08F /* HTMLNode.m */; };
-		DACFC4B51AC1745500A6C08F /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DACFC4B31AC1745500A6C08F /* HTMLParser.m */; };
 		DACFC4B71AC17F7F00A6C08F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4AD1AC1710F00A6C08F /* CoreImage.framework */; };
 		DACFC4B91AC194BB00A6C08F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4B81AC194BB00A6C08F /* UIKit.framework */; };
 		DACFC4BB1AC194C300A6C08F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFC4BA1AC194C300A6C08F /* Foundation.framework */; };
@@ -55,16 +52,11 @@
 		DA904A911AC0621900FA947D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA904A921AC0621900FA947D /* Face_ScannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Face_ScannerTests.m; sourceTree = "<group>"; };
 		DAB864401AC1D088002E4756 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		DACFC4A41AC0770800A6C08F /* StudentDatabase.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = StudentDatabase.html; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.html; };
 		DACFC4A71AC16C0C00A6C08F /* UIImage+FaceDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FaceDetection.h"; sourceTree = "<group>"; };
 		DACFC4A81AC16C0C00A6C08F /* UIImage+FaceDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FaceDetection.m"; sourceTree = "<group>"; };
 		DACFC4AA1AC16D5500A6C08F /* FaceSelectionCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceSelectionCollectionViewController.h; sourceTree = "<group>"; };
 		DACFC4AB1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceSelectionCollectionViewController.m; sourceTree = "<group>"; };
 		DACFC4AD1AC1710F00A6C08F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		DACFC4B01AC1745500A6C08F /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
-		DACFC4B11AC1745500A6C08F /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
-		DACFC4B21AC1745500A6C08F /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
-		DACFC4B31AC1745500A6C08F /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
 		DACFC4B61AC17F1B00A6C08F /* KairosSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KairosSDK.h; sourceTree = "<group>"; };
 		DACFC4B81AC194BB00A6C08F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DACFC4BA1AC194C300A6C08F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -150,9 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				DACFC4B61AC17F1B00A6C08F /* KairosSDK.h */,
-				DACFC4AF1AC1745500A6C08F /* Objective-C HMTL Parser */,
 				DACFC4A61AC16C0C00A6C08F /* UIImage FaceDetection */,
-				DACFC4A41AC0770800A6C08F /* StudentDatabase.html */,
 				DA904A771AC0621900FA947D /* Info.plist */,
 				DA904A781AC0621900FA947D /* main.m */,
 			);
@@ -183,17 +173,6 @@
 				DACFC4A81AC16C0C00A6C08F /* UIImage+FaceDetection.m */,
 			);
 			path = "UIImage FaceDetection";
-			sourceTree = "<group>";
-		};
-		DACFC4AF1AC1745500A6C08F /* Objective-C HMTL Parser */ = {
-			isa = PBXGroup;
-			children = (
-				DACFC4B01AC1745500A6C08F /* HTMLNode.h */,
-				DACFC4B11AC1745500A6C08F /* HTMLNode.m */,
-				DACFC4B21AC1745500A6C08F /* HTMLParser.h */,
-				DACFC4B31AC1745500A6C08F /* HTMLParser.m */,
-			);
-			path = "Objective-C HMTL Parser";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +258,6 @@
 				DA904A821AC0621900FA947D /* Main.storyboard in Resources */,
 				DA904A871AC0621900FA947D /* LaunchScreen.xib in Resources */,
 				DA904A841AC0621900FA947D /* Images.xcassets in Resources */,
-				DACFC4A51AC0770800A6C08F /* StudentDatabase.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,10 +277,8 @@
 			files = (
 				DACFC4A91AC16C0C00A6C08F /* UIImage+FaceDetection.m in Sources */,
 				DACFC4AC1AC16D5500A6C08F /* FaceSelectionCollectionViewController.m in Sources */,
-				DACFC4B41AC1745500A6C08F /* HTMLNode.m in Sources */,
 				DA904A7F1AC0621900FA947D /* ViewController.m in Sources */,
 				DA904A7C1AC0621900FA947D /* AppDelegate.m in Sources */,
-				DACFC4B51AC1745500A6C08F /* HTMLParser.m in Sources */,
 				DA904A791AC0621900FA947D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +407,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "Face Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +428,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "Face Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
