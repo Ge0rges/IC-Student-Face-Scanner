@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D98g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,42 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to select a face" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb6-IW-7sp">
-                                <rect key="frame" x="85" y="273" width="150" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to select a face" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb6-IW-7sp">
+                                <rect key="frame" x="85" y="20" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wFK-mu-VAt">
-                                <rect key="frame" x="16" y="76" width="144" height="408"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wFK-mu-VAt">
+                                <rect key="frame" x="16" y="93" width="144" height="438"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="VIG-ta-opO" appends="YES" id="buY-Gs-Uoh"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a face by tapping above" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqX-7S-Y9I">
-                                <rect key="frame" x="0.0" y="492" width="320" height="56"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a face by tapping above" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqX-7S-Y9I">
+                                <rect key="frame" x="16" y="539" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7J-SZ-Kzh">
-                                <rect key="frame" x="160" y="76" width="144" height="408"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k7J-SZ-Kzh">
+                                <rect key="frame" x="160" y="93" width="144" height="438"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="VIG-ta-opO" appends="YES" id="Sea-qQ-iQD"/>
+                                    <outletCollection property="gestureRecognizers" destination="L1s-Gw-2je" appends="YES" id="hDa-fY-xLj"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Face Scanner can only scan I.C Students in Middle and Secondary School for now." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyW-kB-Hhb">
-                                <rect key="frame" x="16" y="20" width="288" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face Scanner can only scan I.C Students in Middle and Secondary School for now." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyW-kB-Hhb">
+                                <rect key="frame" x="16" y="49" width="288" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GyW-kB-Hhb" firstAttribute="top" secondItem="Rb6-IW-7sp" secondAttribute="bottom" constant="8" id="1IZ-T5-OHU"/>
+                            <constraint firstItem="wFK-mu-VAt" firstAttribute="top" secondItem="GyW-kB-Hhb" secondAttribute="bottom" constant="8" id="8ia-AS-RVc"/>
+                            <constraint firstItem="KqX-7S-Y9I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="HB0-z5-giO"/>
+                            <constraint firstItem="k7J-SZ-Kzh" firstAttribute="top" secondItem="GyW-kB-Hhb" secondAttribute="bottom" constant="8" id="JH6-6R-jk7"/>
+                            <constraint firstItem="KqX-7S-Y9I" firstAttribute="top" secondItem="k7J-SZ-Kzh" secondAttribute="bottom" constant="8" id="KIr-8L-AYY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GyW-kB-Hhb" secondAttribute="trailing" id="LJM-xP-mOX"/>
+                            <constraint firstItem="wFK-mu-VAt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="LtA-he-W5U"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KqX-7S-Y9I" secondAttribute="bottom" constant="8" id="Mdv-8J-euu"/>
+                            <constraint firstItem="KqX-7S-Y9I" firstAttribute="top" secondItem="wFK-mu-VAt" secondAttribute="bottom" constant="8" id="NvO-DU-0JF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k7J-SZ-Kzh" secondAttribute="trailing" id="T0D-RV-jSV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KqX-7S-Y9I" secondAttribute="trailing" id="UNB-GZ-CgP"/>
+                            <constraint firstItem="wFK-mu-VAt" firstAttribute="width" secondItem="k7J-SZ-Kzh" secondAttribute="width" id="YmH-fP-WD8"/>
+                            <constraint firstItem="GyW-kB-Hhb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Z3x-xk-3mv"/>
+                            <constraint firstItem="GyW-kB-Hhb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="29" id="eXe-fv-UAv"/>
+                            <constraint firstItem="Rb6-IW-7sp" firstAttribute="centerX" secondItem="GyW-kB-Hhb" secondAttribute="centerX" id="mNb-2e-tn2"/>
+                            <constraint firstItem="k7J-SZ-Kzh" firstAttribute="leading" secondItem="wFK-mu-VAt" secondAttribute="trailing" id="xvH-fx-815"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -69,7 +89,13 @@
                         <action selector="scanNewFace" destination="vXZ-lx-hvc" id="9YH-qa-BNZ"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="L1s-Gw-2je">
+                    <connections>
+                        <action selector="scanNewFace" destination="vXZ-lx-hvc" id="U85-7z-cAf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="446" y="336"/>
         </scene>
         <!--Face Selection Collection View Controller-->
         <scene sceneID="gs9-Uj-T7n">
@@ -86,18 +112,24 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="faceCell" id="d2U-qU-eA3">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="50" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsh-bZ-9Ni">
+                                        <imageView tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsh-bZ-9Ni">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="hsh-bZ-9Ni" firstAttribute="top" secondItem="d2U-qU-eA3" secondAttribute="topMargin" constant="-8" id="4wj-4V-KX5"/>
+                                    <constraint firstItem="hsh-bZ-9Ni" firstAttribute="leading" secondItem="d2U-qU-eA3" secondAttribute="leadingMargin" constant="-8" id="B6T-Vf-Oop"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="hsh-bZ-9Ni" secondAttribute="bottom" constant="-8" id="TEd-SY-Bjh"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="hsh-bZ-9Ni" secondAttribute="trailing" constant="-8" id="cgH-uP-Xkx"/>
+                                </constraints>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerCell" id="v52-7F-TsV">

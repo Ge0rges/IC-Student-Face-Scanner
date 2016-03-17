@@ -221,6 +221,19 @@ extern NSString * const KairosDidCaptureImageNotification;
 
 
 
+
+
+/*
+ * /gallery/remove
+ * Remove a specified gallery.
+ @param galleryName The name of your gallery */
++ (void)galleryRemove:(NSString*)galleryName
+              success:(void (^)(NSDictionary * response))success
+              failure:(void (^)(NSDictionary * response))failure;
+
+
+
+
 /*
  * /gallery/remove_subject
  * Removes a subject from a specified gallery.
@@ -230,6 +243,8 @@ extern NSString * const KairosDidCaptureImageNotification;
                  fromGallery:(NSString*)galleryName
                      success:(void (^)(NSDictionary * response))success
                      failure:(void (^)(NSDictionary * response))failure;
+
+
 
 
 

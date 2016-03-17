@@ -14,8 +14,10 @@
 #import "UIImage+FaceDetection.h"
 #import "FaceSelectionCollectionViewController.h"
 
-@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate> {
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
   UIImagePickerController *imagePicker;
+  NSInteger enrolledUsers;
+  NSTimer *enrollingTimer;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
@@ -39,12 +41,14 @@ static NSString * const galleryIdentifier = @"studentGallery";
   [KairosSDK initWithAppId:@"77ccfe89" appKey:@"03eed3cb0d74e95dc34e6e14cd1a2fbc"];
   
   //enroll all students
-  if (![[NSUserDefaults standardUserDefaults] boolForKey:@"enrolledStudents"]) [self enrollEntireStudentDatabase];
+  if ([[NSUserDefaults standardUserDefaults] integerForKey:@"enrolledStudents"] < 1800) [self enrollEntireStudentDatabase];
   
   //init the UIImagePickerController
   imagePicker = [UIImagePickerController new];
-  imagePicker.allowsEditing = YES;
+  imagePicker.allowsEditing = NO;
   imagePicker.delegate = self;
+  imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+  imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,11 +59,11 @@ static NSString * const galleryIdentifier = @"studentGallery";
 #pragma mark - Face Recognition
 - (void)recognizeFace:(UIImage *)selectedFace {
   //update UI
-  [self.statusLabel setText:@"Uploading face to server for recognition..."];
+  [self.statusLabel setText:@"Waiting for results... This may take a while."];
   [self.selectedFaceImageView setImage:selectedFace];
   
   //upload image to kairos for recognition
-  [KairosSDK recognizeWithImage:selectedFace threshold:@".80" galleryName:galleryIdentifier maxResults:@"1" success:^(NSDictionary *response) {
+  [KairosSDK recognizeWithImage:selectedFace threshold:@".70" galleryName:galleryIdentifier maxResults:@"5" success:^(NSDictionary *response) {
     NSLog(@"response: %@",response);
     
     [self.statusLabel setText:@"Processing results..."];
@@ -67,6 +71,9 @@ static NSString * const galleryIdentifier = @"studentGallery";
     NSString *status = [[[[response objectForKey:@"images"] objectAtIndex:0] objectForKey:@"transaction"] objectForKey:@"status"];
     if ([status isEqualToString:@"failure"]) {
       [self.statusLabel setText:@"No match found"];
+    
+    } else {
+      [self.statusLabel setText:@"Match found!"];
     }
     
   } failure:^(NSDictionary *response) {
@@ -75,6 +82,102 @@ static NSString * const galleryIdentifier = @"studentGallery";
 }
 
 #pragma mark - Enrolling Student Database
+- (void)enrollEntireStudentDatabase {
+  [self.statusLabel setText:@"Enrolling students to Kairos..."];
+  
+  enrolledUsers = [[NSUserDefaults standardUserDefaults] integerForKey:@"enrolledStudents"];// Pick up where we left off
+  
+  enrollingTimer = [NSTimer scheduledTimerWithTimeInterval:62.0 target:self selector:@selector(enrollNextBatchOfStudents) userInfo:nil repeats:YES];
+}
+
+- (void)enrollNextBatchOfStudents {
+  [self enrollStudentsFromIndex:enrolledUsers toIndex:enrolledUsers+11];
+  
+  if (enrolledUsers+12 >= 1800) {
+    [enrollingTimer invalidate];
+    enrollingTimer = nil;
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"enrolledStudents"];
+    [self.statusLabel setText:@"Enrolled all students to Kairos."];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      [self.statusLabel setText:@"Select a face by tapping above."];
+    });
+  }
+}
+
+
+- (void)enrollStudentsFromIndex:(NSInteger)startIndex toIndex:(NSInteger)endIndex {
+  for (NSInteger i=startIndex; i <= endIndex; i++) {
+    NSDictionary *studentsDict = [NSDictionary dictionaryWithObjects:[self studentUserIDs] forKeys:[self studentNames]];
+    NSString *studentName = [self studentNames][i];
+    
+    NSLog(@"%@ being added", [self studentNames][i]);
+    
+    NSString *imageURL = [NSString stringWithFormat:@"http://moodle.ic.edu.lb/pluginfile.php/%@/user/icon", studentsDict[studentName]];
+    
+    [KairosSDK enrollWithImageURL:imageURL subjectId:studentName galleryName:galleryIdentifier success:^(NSDictionary *response) {
+      enrolledUsers++;
+      [[NSUserDefaults standardUserDefaults] setInteger:enrolledUsers forKey:@"enrolledStudents"];
+      NSLog(@"enrolled user succesfully %i", (int)enrolledUsers);
+      
+    } failure:^(NSDictionary *response) {
+      NSLog(@"failed to enroll user: %@", response);
+    }];
+  }
+  
+}
+
+#pragma mark - Picking an image
+- (IBAction)scanNewFace {
+  [self.statusLabel setText:@"User is selecting picture to recognize..."];
+  
+  //present the action sheet for picking a image
+  [self presentViewController:imagePicker animated:YES completion:NULL];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+  [picker dismissViewControllerAnimated:YES completion:NULL];//just dismiss the picker
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+  [self.statusLabel setText:@"Preparing faces for selection..."];
+  
+  //get edited image
+  UIImage *selectedFace = [info objectForKey:UIImagePickerControllerOriginalImage];
+  
+  //detect faces
+  NSArray *faces = [selectedFace allFacesImagesWithAccuracy:CIDetectorAccuracyLow];
+  
+  if (faces.count == 1) {
+    [self recognizeFace:selectedFace];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+  } else if (faces.count > 1) {
+    //present the collection VC so the user can choose which face he wants to recognize
+    FaceSelectionCollectionViewController *collectionVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"faceSelectionVC"];
+    collectionVC.faces = faces;
+    collectionVC.viewController = self;
+    
+    //dismiss the picker
+    [picker dismissViewControllerAnimated:YES completion:^{
+      [self presentViewController:collectionVC animated:YES completion:NULL];
+    }];
+  
+  } else {
+    //dismiss the picker
+    [picker dismissViewControllerAnimated:YES completion:^{
+      [self.statusLabel setText:@"No face found. Retry."];
+    }];
+  }
+}
+
+#pragma mark - Status Bar
+- (BOOL)prefersStatusBarHidden {return NO;}
+- (UIStatusBarStyle)preferredStatusBarStyle{return UIStatusBarStyleLightContent;}
+
+#pragma mark - Data
 - (NSArray*)studentNames {
   return @[
            @"George Hanna",
@@ -3685,92 +3788,5 @@ static NSString * const galleryIdentifier = @"studentGallery";
            @"64925"
            ];
 }
-
-
-- (void)enrollEntireStudentDatabase {
-  [self.statusLabel setText:@"Enrolling students to Kairos..."];
-  
-  NSDictionary *studentsDict = [NSDictionary dictionaryWithObjects:[self studentUserIDs] forKeys:[self studentNames]];
-  
-  __block int enrolledUsers = 0;
-  
-  for (NSString *studentName in studentsDict) {
-    NSString *imageURL = [NSString stringWithFormat:@"http://moodle.ic.edu.lb/pluginfile.php/%@/user/icon/clean/f1?rev=1", studentsDict[studentName]];
-    
-    [KairosSDK enrollWithImageURL:imageURL subjectId:studentName galleryName:galleryIdentifier success:^(NSDictionary *response) {
-      enrolledUsers++;
-      NSLog(@"enrolled user succesfully %i", enrolledUsers);
-      
-      if (enrolledUsers == 1800) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"enrolledStudents"];
-        [self.statusLabel setText:@"Enrolled all students to Kairos."];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-          [self.statusLabel setText:@"Select a face by tapping above."];
-        });
-      }
-      
-    } failure:^(NSDictionary *response) {
-      NSLog(@"failed to enroll user");
-    }];
-  }
-}
-
-#pragma mark - Picking an image
-- (IBAction)scanNewFace {
-  [self.statusLabel setText:@"User is selecting picture to recognize..."];
-  
-  //present the action sheet for picking a image
-  UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"Select Image Source" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Library", nil];
-  as.tag = 1;
-  [as showInView:self.view];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (actionSheet.tag == 1) {//tag 1 is image picker action sheet
-    if (buttonIndex == actionSheet.cancelButtonIndex) return;
-    
-    //set the source of the image picker to camera and present it
-    imagePicker.sourceType = (buttonIndex == 0) ? UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
-    if (imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-    
-    [self presentViewController:imagePicker animated:YES completion:NULL];
-  }
-}
-
-#pragma mark - UIImagePickerControllerDelegate
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-  [picker dismissViewControllerAnimated:YES completion:NULL];//just dismiss the picker
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-  [self.statusLabel setText:@"Preparing faces for selection..."];
-  
-  //get edited image
-  UIImage *selectedFace = [info objectForKey:UIImagePickerControllerEditedImage];
-  
-  //detect faces
-  NSArray *faces = [selectedFace allFacesImagesWithAccuracy:CIDetectorAccuracyHigh];
-  
-  if (faces.count == 1) {
-    [self recognizeFace:selectedFace];
-    [picker dismissViewControllerAnimated:NO completion:NULL];
-    
-  } else {
-    //present the collection VC so the user can choose which face he wants to recognize
-    FaceSelectionCollectionViewController *collectionVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"faceSelectionVC"];
-    collectionVC.faces = faces;
-    collectionVC.viewController = self;
-    
-    //dismiss the picker
-    [picker dismissViewControllerAnimated:NO completion:^{
-      [self presentViewController:collectionVC animated:YES completion:NULL];
-    }];
-  }
-}
-
-#pragma mark - Status Bar
-- (BOOL)prefersStatusBarHidden {return NO;}
-- (UIStatusBarStyle)preferredStatusBarStyle{return UIStatusBarStyleLightContent;}
 
 @end
